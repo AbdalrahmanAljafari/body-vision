@@ -137,5 +137,11 @@ with gr.Blocks(title="Body Vision Pipeline") as demo:
         ],
     )
 
+import os
+
 if __name__ == "__main__":
-    demo.launch(server_port=9001)
+    port = int(os.environ.get("PORT", 9001))
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=port
+    )
